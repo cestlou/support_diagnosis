@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
   private
 
   def get_jira_client
-    username = ENV["APPTENTIVE_LOGIN"]
-    password = ENV["APPTENTIVE_PASSWORD"]
+    username = ENV["LOGIN"]
+    password = ENV["PASSWORD"]
     options = {
                 :username => username,
                 :password => password,
