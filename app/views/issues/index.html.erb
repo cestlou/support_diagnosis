@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p>Howdy. Issues Page</p>
+
+	<table style="width:100%;">
+		<tr>
+			<th>Issue</th>
+			<th>Description</th>
+			<th>Is this a ticket in the support board?</th>
+			<th></th>
+			<th></th>
+		</tr>
+	  <% @issues.each do |issue| %>
+	  <tr>
+	  	
+	  	<td><%= issue.summary %></td>
+	  	<td><%= issue.description %></td>
+	  	<td><%= issue.labels.include? 'support_issue' %></td>	
+	    <td><%#= issue.methods.sort %></td>
+	    <td><%#= link_to "Show", issue %></td>
+	  </tr>
+  	<% end %>
+	</table>
+
+
+
+	<br>
+	<br>
+	<br>
+	
+	<% @boards.each do |board| %>
+		<%= board %>
+		<%= board.name %>
+	  <hr />
+		<%#= board.description %>
+	  <hr />
+		<%= link_to board.self, board.self %>
+		<%= board.expand %>
+
+	<% end %>
+
+	<%= @project %>
+
+
+</body>
+</html>
+
